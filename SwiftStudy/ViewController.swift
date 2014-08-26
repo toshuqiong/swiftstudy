@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, addPlayerControllerDelegate {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, addPlayerControllerDelegate, PlayerInfoViewControllerDelegate {
     
     var players: NSMutableArray!
     var tableView: UITableView?
@@ -73,6 +73,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
 
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        let playerInfoController =  PlayerInfoViewController()
+        
+        let player = self.players[indexPath.row] as Player
+        playerInfoController.player = player;
+        playerInfoController.delegate = self
+        
+        self.navigationController.pushViewController(playerInfoController, animated: true)
     }
     
 //MARK: - custome function
@@ -93,6 +100,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         self.players.addObject(player)
         self.tableView!.insertRowsAtIndexPaths([NSIndexPath(forRow: self.players.count-1, inSection: 0)], withRowAnimation: .Automatic)
+    }
+    
+//    MARK: - PlayerInfoViewController delegate
+    func playerInfoViewController(controller: PlayerInfoViewController!, updatePlayer player: Player!) {
+        println("%s", player)
     }
     
 }

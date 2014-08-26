@@ -16,6 +16,7 @@
 		45BC427B1981EFEA00AFC227 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45BC42791981EFEA00AFC227 /* Main.storyboard */; };
 		45BC427D1981EFEA00AFC227 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45BC427C1981EFEA00AFC227 /* Images.xcassets */; };
 		45BC42891981EFEA00AFC227 /* SwiftStudyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BC42881981EFEA00AFC227 /* SwiftStudyTests.swift */; };
+		F9A54CD819AC764900D7CF31 /* PlayerInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9A54CD719AC764900D7CF31 /* PlayerInfoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,9 @@
 		45BC42821981EFEA00AFC227 /* SwiftStudyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftStudyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		45BC42871981EFEA00AFC227 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45BC42881981EFEA00AFC227 /* SwiftStudyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftStudyTests.swift; sourceTree = "<group>"; };
+		F9A54CD519AC764900D7CF31 /* SwiftStudy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftStudy-Bridging-Header.h"; sourceTree = "<group>"; };
+		F9A54CD619AC764900D7CF31 /* PlayerInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerInfoViewController.h; sourceTree = "<group>"; };
+		F9A54CD719AC764900D7CF31 /* PlayerInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerInfoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,9 @@
 				4535586319822C8A006E2E05 /* GameController.swift */,
 				4535586519822D43006E2E05 /* Player.swift */,
 				4531E2511982313200E8FFB9 /* PlayerCell.swift */,
+				F9A54CD619AC764900D7CF31 /* PlayerInfoViewController.h */,
+				F9A54CD719AC764900D7CF31 /* PlayerInfoViewController.m */,
+				F9A54CD519AC764900D7CF31 /* SwiftStudy-Bridging-Header.h */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -233,6 +240,7 @@
 				4535586419822C8A006E2E05 /* GameController.swift in Sources */,
 				45BC42761981EFE900AFC227 /* AppDelegate.swift in Sources */,
 				4535586619822D43006E2E05 /* Player.swift in Sources */,
+				F9A54CD819AC764900D7CF31 /* PlayerInfoViewController.m in Sources */,
 				4535586219822C78006E2E05 /* AddPlayerController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,9 +357,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = SwiftStudy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftStudy/SwiftStudy-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -360,9 +371,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = SwiftStudy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftStudy/SwiftStudy-Bridging-Header.h";
 			};
 			name = Release;
 		};

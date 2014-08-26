@@ -99,7 +99,7 @@ class AddPlayerController: UIViewController, UITableViewDataSource, UITableViewD
         player.game = self.game
         player.rating = Int8(arc4random_uniform(5) + 1)
         
-        self.delegate!.addPlayerController(self, player: player)
+        self.delegate?.addPlayerController(self, player: player)
         
         self.dismissViewControllerAnimated(true, completion: nil)
     }
